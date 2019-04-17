@@ -116,6 +116,7 @@ func (c *KubeletCollector) parsePods(pods []*kubelet.Pod) ([]*TagInfo, error) {
 			output = append(output, podInfo)
 		}
 
+		// TODO: tagging logic for init containers ?
 		// container tags
 		for _, container := range pod.Status.Containers {
 			cTags := tags.Copy()
